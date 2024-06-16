@@ -1278,3 +1278,20 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.loading {
+  display: none;
+  /* additional styling for the loading message */
+}
+
+.error-message {
+  display: none;
+  color: red;
+  /* additional styling for the error message */
+}
+
+.sent-message {
+  display: none;
+  color: green;
+  /* additional styling for the sent message */
+}
