@@ -1301,3 +1301,7 @@ section,
   height: 50px; /* Adjust height as needed */
   font-size: 16px; /* Adjust font size as needed */
 } 
+
+#main-background-photo {
+  filter: saturate(100%) brightness(80%) grayscale(30%);
+}
