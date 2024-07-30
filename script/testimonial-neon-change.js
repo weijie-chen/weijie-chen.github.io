@@ -4,7 +4,7 @@
     const testimonialItem = document.querySelector('.testimonial-item');
   
     if (testimonialItem) { // Ensure the element exists
-        const testimonialText = testimonialItem.querySelector('.testimonial-text'); // Target the specific element
+        const testimonialText = testimonialItem.querySelector('.testimonial-item'); // Target the specific element
 
         testimonialItem.addEventListener('mouseenter', () => {
             hoverTimeout = setTimeout(() => {

@@ -84,7 +84,11 @@ function initThreeJSAnimation(containerId) {
     });
 }
 
-// Initialize the animation
+// Initialize the animations
 document.addEventListener('DOMContentLoaded', function() {
-    initThreeJSAnimation('animationCanvas');
+    initThreeJSAnimation('animationCanvas-1');
+    initThreeJSAnimation('animationCanvas-2');
+    initThreeJSAnimation('animationCanvas-3');
+    initThreeJSAnimation('animationCanvas-4');
+    initThreeJSAnimation('animationCanvas-5');
 });

@@ -525,57 +525,60 @@ span{
 .tutorials h2 {
     margin-bottom: 4rem;
 }
-.portfolio-container{
+.portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns as needed */
     align-items: center;
     gap: 2.5rem;
     margin-top: 3rem;
 }
+
 .portfolio-container .portfolio-box {
     position: relative;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
-    /* aspect-ratio: 16 / 9;  Adjust this to desired aspect ratio */
+    flex-direction: column;
     background-color: var(--bg-color); /* Optional: to show a background color while images are loading */
-}
-/* Style for the image within the portfolio box */
-.portfolio-box img {
-    width: 100%;  /* Make the image take the full width of its container */
-    height: 100%; /* Make the image take the full height of its container */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
-    transition: 0.3s ease; /* Smooth transition for any changes to the image */
+    height: 400px; /* Adjust height as needed */
 }
 
-/* Scale up the image slightly when hovering over the portfolio box */
-.portfolio-box:hover img {
-    transform: scale(1.1); /* Slight zoom effect */
+/* Style for the animation canvas */
+.animation-canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Just for visibility */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 /* Style for the overlay layer within the portfolio box */
 .portfolio-layer {
-    position: absolute; /* Position the layer absolutely within its container */
-    left: 0; /* Align the layer to the left edge */
-    bottom: 0; /* Align the layer to the bottom edge */
-    width: 100%; /* Make the layer take the full width of the container */
-    height: 100%; /* Make the layer take the full height of the container */
-    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color)); /* Apply a linear gradient background */
-    display: flex; /* Use flexbox for easy centering of content */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    flex-direction: column; /* Stack items vertically */
-    text-align: center; /* Center text horizontally */
-    padding: 2rem; /* Add padding around the content */
-    transform: translateY(100%); /* Initially position the layer below the container */
-    transition: transform 0.3s ease; /* Smooth transition for the transform property */
+    position: absolute;
+    left: 0;
+    bottom: -100%; /* Initially position the layer below the container */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    transition: bottom 0.3s ease; /* Smooth transition for the bottom property */
+    z-index: 2; /* Ensure the overlay is above the canvas */
 }
 
 /* Slide up the overlay layer when hovering over the portfolio box */
 .portfolio-box:hover .portfolio-layer {
-    transform: translateY(0); /* Move the layer up into view */
+    bottom: 0; /* Move the layer up into view */
 }
+
+
 .animation {
     width: 100%;
     height: 100vh; /* Full height of the viewport */
