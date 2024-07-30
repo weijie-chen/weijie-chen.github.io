@@ -26,7 +26,7 @@ function initThreeJSAnimation(containerId) {
     const arrowLength = 1;
     const arrowColor = new THREE.Color();
     const gridSize = 5;
-    const arrowSpacing = 2;
+    const arrowSpacing = 1.5;
 
     for (let i = -gridSize; i <= gridSize; i++) {
         for (let j = -gridSize; j <= gridSize; j++) {
@@ -65,8 +65,8 @@ function initThreeJSAnimation(containerId) {
     function animate() {
         requestAnimationFrame(animate);
 
-        // Rotate the scene for better visualization (slower)
-        scene.rotation.y += 0.001;
+        // Rotate the scene for better visualization
+        scene.rotation.y += 0.04;
 
         // Update controls
         controls.update();
@@ -87,7 +87,7 @@ function initThreeJSAnimation(containerId) {
 // Initialize the animations
 document.addEventListener('DOMContentLoaded', function() {
     initThreeJSAnimation('animationCanvas-1');
-    initThreeJSAnimation('animationCanvas-2');
+    // initThreeJSAnimation('animationCanvas-2');
     initThreeJSAnimation('animationCanvas-3');
-    initThreeJSAnimation('animationCanvas-4');
+    // initThreeJSAnimation('animationCanvas-4');
 });

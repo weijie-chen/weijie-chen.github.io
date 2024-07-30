@@ -518,11 +518,11 @@ span{
     font-size: 16px;
     color: white;
 }
-.tutorials{
+.tutorial{
     background-color: var(--second-bg-color);
     color: white;
 }
-.tutorials h2 {
+.tutorial h2 {
     margin-bottom: 4rem;
 }
 .portfolio-container {
