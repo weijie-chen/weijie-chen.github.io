@@ -651,7 +651,7 @@ span{
     .education-timeline-dot{
         left: 0;
     }
-    .services{
+    .skills{
         padding-bottom: 7rem;
     }
     .testimonials .wrapper{
@@ -710,7 +710,7 @@ span{
     .home-img img{
         width: 56vw;
     }
-    .services h2{
+    .skills h2{
         margin-bottom: 3rem;
     }
     .services-container{
