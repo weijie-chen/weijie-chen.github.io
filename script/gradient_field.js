@@ -1,6 +1,6 @@
-import * as THREE from "https://cdn.skypack.dev/three@0.150.0";
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.150.0/examples/jsm/controls/OrbitControls.js";
-import * as BufferGeometryUtils from "https://cdn.skypack.dev/three@0.167.0/examples/jsm/utils/BufferGeometryUtils.js";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 function initThreeJSAnimation(containerId) {
     // Get the container element
