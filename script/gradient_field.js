@@ -88,7 +88,4 @@ function initThreeJSAnimation(containerId) {
 // Initialize the animations
 document.addEventListener('DOMContentLoaded', function() {
     initThreeJSAnimation('animationCanvas-1');
-    // initThreeJSAnimation('animationCanvas-2');
-    initThreeJSAnimation('animationCanvas-3');
-    // initThreeJSAnimation('animationCanvas-4');
 });
