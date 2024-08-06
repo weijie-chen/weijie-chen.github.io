@@ -16,7 +16,7 @@ function initThreeJSAnimation(containerId) {
     const scene = new THREE.Scene();
 
     // Create a camera
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(55, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.set(20, 20, 20);
     camera.lookAt(0, 0, 0);
 
@@ -69,7 +69,7 @@ function initThreeJSAnimation(containerId) {
         requestAnimationFrame(animate);
 
         // Rotate the scene for better visualization
-        scene.rotation.y += 0.04;
+        scene.rotation.y += 0.01;
 
         // Update controls
         controls.update();

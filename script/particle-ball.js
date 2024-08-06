@@ -15,7 +15,7 @@ function initThreeJSAnimation(containerId) {
     let scene = new THREE.Scene();
 
     // Create a camera
-    let camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 1, 100);
+    let camera = new THREE.PerspectiveCamera(70, container.clientWidth / container.clientHeight, 1, 100);
     camera.position.set(0, 0, 10);
 
     // Create a renderer
@@ -28,8 +28,8 @@ function initThreeJSAnimation(containerId) {
 
     // Create a marker sphere
     let marker = new THREE.Mesh(
-        new THREE.SphereGeometry(0.5, 16, 8),
-        new THREE.MeshBasicMaterial({ color: "red", wireframe: true })
+        new THREE.SphereGeometry(0.4, 16, 8),
+        new THREE.MeshBasicMaterial({ color: "#00ffee", wireframe: true })
     );
     scene.add(marker);
 
