@@ -97,5 +97,5 @@ function initThreeJSAnimation(containerId) {
 
 // Initialize the animations when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initThreeJSAnimation('animationCanvas-1');
+    initThreeJSAnimation('animationCanvas-4');
 });
