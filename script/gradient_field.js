@@ -28,7 +28,7 @@ function initThreeJSAnimation(containerId) {
     const arrowLength = 1;
     const gridSize = 5;
     const arrowSpacing = 1.5;
-    const maxDistance = Math.sqrt(3 * Math.pow(gridSize, 2)); // Maximum distance from the center to the edge
+    const maxDistance = Math.sqrt(3 * Math.pow(gridSize, 2.5)); // Maximum distance from the center to the edge
 
     // Define the start and end colors
     const startColor = new THREE.Color("#BD249B");
