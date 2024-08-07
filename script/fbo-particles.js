@@ -14,7 +14,7 @@ function initBlobAnimation(containerId) {
     let scene = new THREE.Scene();
 
     // Create a camera
-    let camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    let camera = new THREE.PerspectiveCamera(85, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.set(0, 2, 5);
 
     // Create a renderer
@@ -26,7 +26,7 @@ function initBlobAnimation(containerId) {
     let controls = new OrbitControls(camera, renderer.domElement);
 
     // Create a geometry
-    let geometry = new THREE.SphereGeometry(2.3, 128, 128);
+    let geometry = new THREE.TorusGeometry(2.3, 0.8, 100, 100);
 
     // Create a shader material
     const vertexShader = `
@@ -36,8 +36,6 @@ function initBlobAnimation(containerId) {
         uniform float noiseScale;
         uniform float burstTime;
         uniform float burstStrength;
-
-        
 
         // Improved Perlin Noise Function
         vec3 mod289(vec3 x) {
@@ -115,7 +113,7 @@ function initBlobAnimation(containerId) {
             vec3 p3 = vec3(a1.zw,h.w);
 
             //Normalise gradients
-            vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));
+            vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
             p0 *= norm.x;
             p1 *= norm.y;
             p2 *= norm.z;
@@ -191,7 +189,8 @@ function initBlobAnimation(containerId) {
         requestAnimationFrame(animate);
         controls.update();
 
-        uniforms.time.value += 0.05;
+        uniforms.time.value += 0.03;
+        mesh.rotation.y += 0.01;  // Adjust this value to change the speed of rotation
         renderer.render(scene, camera);
     }
 
