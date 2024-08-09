@@ -571,6 +571,8 @@ span{
     padding: 2rem;
     transition: bottom 0.3s ease; /* Smooth transition for the bottom property */
     z-index: 2; /* Ensure the overlay is above the canvas */
+    display: flex;
+    gap: 1rem; /* Adds space between elements */
 }
 
 /* Slide up the overlay layer when hovering over the portfolio box */
@@ -618,6 +620,7 @@ span{
     font-size: 2.5rem;
     color: var(--second-bg-color);
 }
+
 @media(max-width:1285px){
     html{
         font-size: 55%;

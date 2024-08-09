@@ -1,6 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@v0.167.0/build/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@v0.167.0/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@v0.167.0/examples/jsm/loaders/GLTFLoader.js';
 import * as BufferGeometryUtils from 'https://cdn.jsdelivr.net/npm/three@v0.167.0/examples/jsm/utils/BufferGeometryUtils.js';
 
 function initThreeJSAnimation(containerId) {
@@ -29,7 +28,30 @@ function initThreeJSAnimation(containerId) {
     // Create a marker sphere
     let marker = new THREE.Mesh(
         new THREE.SphereGeometry(0.4, 16, 8),
-        new THREE.MeshBasicMaterial({ color: "#00ffee", wireframe: true })
+        new THREE.ShaderMaterial({
+            uniforms: {
+                color1: { value: new THREE.Color("#00ffee") },
+                color2: { value: new THREE.Color("#BD249B") },
+                time: { value: 0 }
+            },
+            vertexShader: `
+                varying vec3 vPosition;
+                void main() {
+                    vPosition = position;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform vec3 color1;
+                uniform vec3 color2;
+                varying vec3 vPosition;
+                void main() {
+                    float t = (vPosition.y + 4.0) / 8.0; // Adjust based on the geometry
+                    gl_FragColor = vec4(mix(color1, color2, t), 1.0);
+                }
+            `,
+            wireframe: true
+        })
     );
     scene.add(marker);
 
